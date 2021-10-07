@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # I don’t want to show my secrets
-/config/secrets.yml
+/config/secrets.yaml
 
 #postgres db files too large to maintain in github
 /data_db
