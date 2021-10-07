@@ -1,0 +1,309 @@
+2021-09-29 14:49:11.707 MDT [34467] LOG:  starting PostgreSQL 13.3 on x86_64-apple-darwin13.4.0, compiled by clang version 11.1.0, 64-bit
+2021-09-29 14:49:11.710 MDT [34467] LOG:  listening on IPv6 address "::1", port 5432
+2021-09-29 14:49:11.710 MDT [34467] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-09-29 14:49:11.711 MDT [34467] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-09-29 14:49:11.714 MDT [34468] LOG:  database system was shut down at 2021-09-29 14:46:27 MDT
+2021-09-29 14:49:11.717 MDT [34467] LOG:  database system is ready to accept connections
+2021-09-29 14:57:55.641 MDT [34584] FATAL:  database "MICRO_MOBILITY" does not exist
+2021-09-29 16:07:37.764 MDT [34726] ERROR:  relation "sqlite_master" does not exist at character 18
+2021-09-29 16:07:37.764 MDT [34726] STATEMENT:  SELECT name FROM sqlite_master WHERE type='table' AND name=?;
+2021-09-29 20:13:10.554 MDT [35766] ERROR:  relation "trips" does not exist
+2021-09-29 20:13:10.554 MDT [35766] STATEMENT:  COPY "trips" FROM stdin WITH DELIMITER AS ',' NULL AS '\N'
+2021-09-29 20:20:01.504 MDT [35834] ERROR:  relation "trips" does not exist
+2021-09-29 20:20:01.504 MDT [35834] STATEMENT:  COPY "trips" FROM stdin WITH DELIMITER AS ',' NULL AS '\N'
+2021-09-29 20:54:17.013 MDT [36108] WARNING:  there is no transaction in progress
+2021-09-30 15:16:05.340 MDT [39384] WARNING:  there is no transaction in progress
+2021-10-01 21:42:38.828 MDT [44567] WARNING:  there is no transaction in progress
+2021-10-05 02:39:10.329 GMT [1499] LOG:  syntax error in file "/Users/networkadministrator/Micromobility_A/data_db/postgresql.conf" line 780, near token "all"
+2021-10-05 02:39:10.330 GMT [1499] FATAL:  configuration file "/Users/networkadministrator/Micromobility_A/data_db/postgresql.conf" contains errors
+2021-10-04 20:43:08.005 MDT [1536] LOG:  starting PostgreSQL 13.3 on x86_64-apple-darwin13.4.0, compiled by clang version 11.1.0, 64-bit
+2021-10-04 20:43:08.013 MDT [1536] LOG:  listening on IPv6 address "::1", port 5432
+2021-10-04 20:43:08.013 MDT [1536] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-10-04 20:43:08.013 MDT [1536] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2021-10-04 20:43:08.022 MDT [1537] LOG:  database system was interrupted; last known up at 2021-10-01 21:46:04 MDT
+2021-10-04 20:43:08.096 MDT [1537] LOG:  database system was not properly shut down; automatic recovery in progress
+2021-10-04 20:43:08.100 MDT [1537] LOG:  redo starts at 0/3061AAC8
+2021-10-04 20:43:08.100 MDT [1537] LOG:  invalid record length at 0/3061ABE8: wanted 24, got 0
+2021-10-04 20:43:08.100 MDT [1537] LOG:  redo done at 0/3061ABB0
+2021-10-04 20:43:08.107 MDT [1536] LOG:  database system is ready to accept connections
+2021-10-04 20:44:39.822 MDT [1572] WARNING:  there is no transaction in progress
+2021-10-05 20:33:31.716 MDT [4797] ERROR:  syntax error at or near ":" at character 261
+2021-10-05 20:33:31.716 MDT [4797] STATEMENT:  
+	                    SELECT Trip_ID, Trip_Distance, Trip_Duration, 
+	                    Start_Community_Area_Number, End_Community_Area_Number, extract(dow from datefield)
+	                    FROM trips
+	                    WHERE Start_Community_Area_Number == :community
+	                    OR End_Community_Area_Number == :community
+	                    
+2021-10-05 20:34:04.982 MDT [4803] ERROR:  syntax error at or near ":" at character 260
+2021-10-05 20:34:04.982 MDT [4803] STATEMENT:  
+	                    SELECT Trip_ID, Trip_Distance, Trip_Duration, 
+	                    Start_Community_Area_Number, End_Community_Area_Number, extract(dow from datefield)
+	                    FROM trips
+	                    WHERE Start_Community_Area_Number = :community
+	                    OR End_Community_Area_Number = :community
+	                    
+2021-10-05 20:36:38.416 MDT [4828] ERROR:  column "trip_id" does not exist at character 29
+2021-10-05 20:36:38.416 MDT [4828] HINT:  Perhaps you meant to reference the column "trips.Trip_ID".
+2021-10-05 20:36:38.416 MDT [4828] STATEMENT:  
+	                    SELECT Trip_ID, Trip_Distance, Trip_Duration, 
+	                    Start_Community_Area_Number, End_Community_Area_Number, extract(dow from datefield)
+	                    FROM trips
+	                    WHERE Start_Community_Area_Number = 2
+	                    OR End_Community_Area_Number = 2
+	                    
+2021-10-05 20:37:20.783 MDT [4836] ERROR:  column trips.trip_id does not exist at character 29
+2021-10-05 20:37:20.783 MDT [4836] HINT:  Perhaps you meant to reference the column "trips.Trip_ID".
+2021-10-05 20:37:20.783 MDT [4836] STATEMENT:  
+	                    SELECT trips.Trip_ID, trips.Trip_Distance, trips.Trip_Duration, 
+	                    trips.Start_Community_Area_Number, trips.End_Community_Area_Number
+	                    FROM trips
+	                    WHERE Start_Community_Area_Number = 2
+	                    OR End_Community_Area_Number = 2
+	                    
+2021-10-05 20:38:08.165 MDT [4844] ERROR:  column "trips.Trip_ID" does not exist at character 29
+2021-10-05 20:38:08.165 MDT [4844] STATEMENT:  
+	                    SELECT "trips.Trip_ID", "trips.Trip_Distance", "trips.Trip_Duration", 
+	                    "trips.Start_Community_Area_Number", "trips.End_Community_Area_Number"
+	                    FROM trips
+	                    WHERE "Start_Community_Area_Number" = 2
+	                    OR "End_Community_Area_Number" = 2
+	                    
+2021-10-05 20:47:11.145 MDT [4950] ERROR:  syntax error at or near "'trips'" at character 16
+2021-10-05 20:47:11.145 MDT [4950] STATEMENT:  
+	SELECT *
+	FROM 'trips'
+	
+2021-10-05 20:57:14.034 MDT [5097] ERROR:  column "hermosa" does not exist at character 47
+2021-10-05 20:57:14.034 MDT [5097] STATEMENT:  
+	SELECT id
+	FROM communities
+	WHERE community = HERMOSA
+	
+2021-10-05 20:57:36.344 MDT [5103] ERROR:  column "HERMOSA" does not exist at character 47
+2021-10-05 20:57:36.344 MDT [5103] STATEMENT:  
+	SELECT id
+	FROM communities
+	WHERE community = "HERMOSA"
+	
+2021-10-05 20:57:50.033 MDT [5106] ERROR:  column "HERMOSA" does not exist at character 59
+2021-10-05 20:57:50.033 MDT [5106] STATEMENT:  
+	SELECT id
+	FROM communities
+	WHERE communities.community = "HERMOSA"
+	
+2021-10-05 20:58:24.696 MDT [5111] ERROR:  column "WEST RIDGE" does not exist at character 59
+2021-10-05 20:58:24.696 MDT [5111] STATEMENT:  
+	SELECT id
+	FROM communities
+	WHERE communities.community = "WEST RIDGE"
+	
+2021-10-05 21:03:51.775 MDT [5166] ERROR:  column trips.start_community_area_number does not exist at character 28
+2021-10-05 21:03:51.775 MDT [5166] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE trips.Start_Community_Area_Number = '20.0'
+	OR trips.END_Community_Area_Number = '20.0'
+	
+2021-10-05 21:04:50.041 MDT [5176] ERROR:  column "END_Community_Area_Number" does not exist at character 70
+2021-10-05 21:04:50.041 MDT [5176] HINT:  Perhaps you meant to reference the column "trips.End_Community_Area_Number".
+2021-10-05 21:04:50.041 MDT [5176] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE "Start_Community_Area_Number" = '20.0'
+	OR "END_Community_Area_Number" = '20.0'
+	
+2021-10-05 21:05:13.070 MDT [5181] ERROR:  column "trips.Start_Community_Area_Number" does not exist at character 28
+2021-10-05 21:05:13.070 MDT [5181] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE "trips.Start_Community_Area_Number" = '20.0'
+	OR "trips.END_Community_Area_Number" = '20.0'
+	
+2021-10-05 21:07:41.028 MDT [5207] ERROR:  column "trips.Start_Community_Area_Number" does not exist at character 28
+2021-10-05 21:07:41.028 MDT [5207] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE "trips.Start_Community_Area_Number" = 20.0
+	OR "trips.END_Community_Area_Number" = 20.0
+	
+2021-10-05 21:07:53.046 MDT [5210] ERROR:  column "trips.END_Community_Area_Number" does not exist at character 68
+2021-10-05 21:07:53.046 MDT [5210] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE "Start_Community_Area_Number" = 20.0
+	OR "trips.END_Community_Area_Number" = 20.0
+	
+2021-10-05 21:08:05.352 MDT [5213] ERROR:  column "END_Community_Area_Number" does not exist at character 68
+2021-10-05 21:08:05.352 MDT [5213] HINT:  Perhaps you meant to reference the column "trips.End_Community_Area_Number".
+2021-10-05 21:08:05.352 MDT [5213] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE "Start_Community_Area_Number" = 20.0
+	OR "END_Community_Area_Number" = 20.0
+	
+2021-10-06 13:19:55.848 MDT [6965] WARNING:  there is no transaction in progress
+2021-10-06 13:32:17.264 MDT [6965] WARNING:  there is no transaction in progress
+2021-10-06 13:33:57.994 MDT [7107] ERROR:  syntax error at or near "[" at character 67
+2021-10-06 13:33:57.994 MDT [7107] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN ['HERMOSA']
+	AND "trips.Start_Community_Area_Name"
+	IN ['community']
+	
+2021-10-06 13:35:24.676 MDT [7122] ERROR:  syntax error at or near "[" at character 67
+2021-10-06 13:35:24.676 MDT [7122] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN ['HERMOSA']
+	AND "trips.Start_Community_Area_Name"
+	IN ['community']
+	
+2021-10-06 13:35:50.990 MDT [7129] ERROR:  syntax error at or near "HERMOSA" at character 67
+2021-10-06 13:35:50.990 MDT [7129] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN HERMOSA
+	AND "trips.Start_Community_Area_Name"
+	IN ('community',)
+	
+2021-10-06 13:36:13.034 MDT [7134] ERROR:  syntax error at or near ")" at character 132
+2021-10-06 13:36:13.034 MDT [7134] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.Start_Community_Area_Name"
+	IN (('community',))
+	
+2021-10-06 13:36:29.853 MDT [7138] ERROR:  syntax error at or near ")" at character 132
+2021-10-06 13:36:29.853 MDT [7138] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.Start_Community_Area_Name"
+	IN (('community',))
+	
+2021-10-06 13:37:07.169 MDT [7147] ERROR:  syntax error at or near "[" at character 68
+2021-10-06 13:37:07.169 MDT [7147] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (['HERMOSA'])
+	AND "trips.Start_Community_Area_Name"
+	IN (('community',))
+	
+2021-10-06 13:37:21.363 MDT [7151] ERROR:  syntax error at or near ")" at character 132
+2021-10-06 13:37:21.363 MDT [7151] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.Start_Community_Area_Name"
+	IN (('community',))
+	
+2021-10-06 13:38:55.933 MDT [7172] ERROR:  syntax error at or near "[" at character 119
+2021-10-06 13:38:55.933 MDT [7172] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.Start_Community_Area_Name"
+	IN (['WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'])
+	
+2021-10-06 13:39:11.904 MDT [7175] ERROR:  column "trips.Start_Community_Area_Name" does not exist at character 29
+2021-10-06 13:39:11.904 MDT [7175] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.Start_Community_Area_Name"
+	IN (('WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'))
+	
+2021-10-06 13:39:33.530 MDT [7179] ERROR:  column "trips.Start_Community_Area_Name" does not exist at character 29
+2021-10-06 13:39:33.530 MDT [7179] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.End_Community_Area_Name"
+	IN (('WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'))
+	
+2021-10-06 13:40:35.533 MDT [7205] ERROR:  column "trips.Start_Community_Area_Name" does not exist at character 29
+2021-10-06 13:40:35.533 MDT [7205] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "trips.Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.End_Community_Area_Name"
+	IN (('WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'))
+	
+2021-10-06 13:40:50.878 MDT [7209] ERROR:  column "hermosa" does not exist at character 62
+2021-10-06 13:40:50.878 MDT [7209] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name" 
+	IN (HERMOSA)
+	AND "trips.End_Community_Area_Name"
+	IN (('WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'))
+	
+2021-10-06 13:42:43.016 MDT [7230] ERROR:  syntax error at or near "LOWER" at character 67
+2021-10-06 13:42:43.016 MDT [7230] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  LOWER("Start_Community_Area_Name")
+	IN LOWER(HERMOSA)
+	AND LOWER("trips.End_Community_Area_Name")
+	IN LOWER(('WEST RIDGE', 'UPTOWN', 'LINCOLN SQUARE', 'NORTH CENTER', 'LAKE VIEW', 'LINCOLN PARK', 'NEAR NORTH SIDE', 'NORWOOD PARK', 'JEFFERSON PARK', 'ALBANY PARK', 'PORTAGE PARK', 'IRVING PARK', 'DUNNING', 'MONTCLARE', 'BELMONT CRAGIN', 'HERMOSA', 'AVONDALE', 'LOGAN SQUARE', 'HUMBOLDT PARK', 'WEST TOWN', 'AUSTIN', 'WEST GARFIELD PARK', 'EAST GARFIELD PARK', 'NEAR WEST SIDE', 'NORTH LAWNDALE', 'SOUTH LAWNDALE', 'LOWER WEST SIDE', 'LOOP', 'NEAR SOUTH SIDE', 'ARMOUR SQUARE', 'KENWOOD', 'WOODLAWN', 'GARFIELD RIDGE', 'ARCHER HEIGHTS', 'BRIGHTON PARK', 'MCKINLEY PARK', 'BRIDGEPORT', 'NEW CITY', 'GAGE PARK', 'CHICAGO LAWN', 'WEST ENGLEWOOD'))
+	
+2021-10-06 13:46:23.480 MDT [7269] ERROR:  syntax error at or near ")" at character 72
+2021-10-06 13:46:23.480 MDT [7269] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name"
+	IN (('hermosa',))
+	AND "trips.End_Community_Area_Name"
+	IN (('west ridge', 'uptown', 'lincoln square', 'north center', 'lake view', 'lincoln park', 'near north side', 'norwood park', 'jefferson park', 'albany park', 'portage park', 'irving park', 'dunning', 'montclare', 'belmont cragin', 'hermosa', 'avondale', 'logan square', 'humboldt park', 'west town', 'austin', 'west garfield park', 'east garfield park', 'near west side', 'north lawndale', 'south lawndale', 'lower west side', 'loop', 'near south side', 'armour square', 'kenwood', 'woodlawn', 'garfield ridge', 'archer heights', 'brighton park', 'mckinley park', 'bridgeport', 'new city', 'gage park', 'chicago lawn', 'west englewood'))
+	
+2021-10-06 13:46:43.227 MDT [7273] ERROR:  syntax error at or near ")" at character 71
+2021-10-06 13:46:43.227 MDT [7273] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name"
+	IN ('hermosa',)
+	AND "trips.End_Community_Area_Name"
+	IN (('west ridge', 'uptown', 'lincoln square', 'north center', 'lake view', 'lincoln park', 'near north side', 'norwood park', 'jefferson park', 'albany park', 'portage park', 'irving park', 'dunning', 'montclare', 'belmont cragin', 'hermosa', 'avondale', 'logan square', 'humboldt park', 'west town', 'austin', 'west garfield park', 'east garfield park', 'near west side', 'north lawndale', 'south lawndale', 'lower west side', 'loop', 'near south side', 'armour square', 'kenwood', 'woodlawn', 'garfield ridge', 'archer heights', 'brighton park', 'mckinley park', 'bridgeport', 'new city', 'gage park', 'chicago lawn', 'west englewood'))
+	
+2021-10-06 13:47:21.253 MDT [7283] ERROR:  syntax error at or near "hermosa" at character 60
+2021-10-06 13:47:21.253 MDT [7283] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name"
+	IN hermosa
+	AND "trips.End_Community_Area_Name"
+	IN (('west ridge', 'uptown', 'lincoln square', 'north center', 'lake view', 'lincoln park', 'near north side', 'norwood park', 'jefferson park', 'albany park', 'portage park', 'irving park', 'dunning', 'montclare', 'belmont cragin', 'hermosa', 'avondale', 'logan square', 'humboldt park', 'west town', 'austin', 'west garfield park', 'east garfield park', 'near west side', 'north lawndale', 'south lawndale', 'lower west side', 'loop', 'near south side', 'armour square', 'kenwood', 'woodlawn', 'garfield ridge', 'archer heights', 'brighton park', 'mckinley park', 'bridgeport', 'new city', 'gage park', 'chicago lawn', 'west englewood'))
+	
+2021-10-06 13:48:02.247 MDT [7292] ERROR:  column "trips.End_Community_Area_Name" does not exist at character 86
+2021-10-06 13:48:02.247 MDT [7292] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name"
+	IN ('hermosa', 'uptown')
+	AND "trips.End_Community_Area_Name"
+	IN (('west ridge', 'uptown', 'lincoln square', 'north center', 'lake view', 'lincoln park', 'near north side', 'norwood park', 'jefferson park', 'albany park', 'portage park', 'irving park', 'dunning', 'montclare', 'belmont cragin', 'hermosa', 'avondale', 'logan square', 'humboldt park', 'west town', 'austin', 'west garfield park', 'east garfield park', 'near west side', 'north lawndale', 'south lawndale', 'lower west side', 'loop', 'near south side', 'armour square', 'kenwood', 'woodlawn', 'garfield ridge', 'archer heights', 'brighton park', 'mckinley park', 'bridgeport', 'new city', 'gage park', 'chicago lawn', 'west englewood'))
+	
+2021-10-06 13:48:17.531 MDT [7295] ERROR:  operator does not exist: text = record at character 112
+2021-10-06 13:48:17.531 MDT [7295] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2021-10-06 13:48:17.531 MDT [7295] STATEMENT:  
+	SELECT *
+	FROM trips
+	WHERE  "Start_Community_Area_Name"
+	IN ('hermosa', 'uptown')
+	AND "End_Community_Area_Name"
+	IN (('west ridge', 'uptown', 'lincoln square', 'north center', 'lake view', 'lincoln park', 'near north side', 'norwood park', 'jefferson park', 'albany park', 'portage park', 'irving park', 'dunning', 'montclare', 'belmont cragin', 'hermosa', 'avondale', 'logan square', 'humboldt park', 'west town', 'austin', 'west garfield park', 'east garfield park', 'near west side', 'north lawndale', 'south lawndale', 'lower west side', 'loop', 'near south side', 'armour square', 'kenwood', 'woodlawn', 'garfield ridge', 'archer heights', 'brighton park', 'mckinley park', 'bridgeport', 'new city', 'gage park', 'chicago lawn', 'west englewood'))
+	

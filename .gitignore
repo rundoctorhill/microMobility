@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# I don’t want to show my secrets
+/config/secrets.yml
+
+#postgres db files too large to maintain in github
+/data_db
